@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Store Inventory</string>
+
+    <!-- Label for overflow menu option that deletes all inventory data in the app [CHAR LIMIT=20] -->
+    <string name="action_delete_all_entries">Delete All Items</string>
+
+    <!-- Label for overflow menu option that edit the inventory data in the app [CHAR LIMIT=20] -->
+    <string name="action_edit_entry">Edit</string>
+
+    <!-- Label for overflow menu option that deletes the inventory data in the app [CHAR LIMIT=20] -->
+    <string name="action_delete_entry">Delete</string>
+
+    <!-- Label for overflow menu option that saves the inventory data in the app [CHAR LIMIT=20] -->
+    <string name="action_save">Delete</string>
+
 </resources>
