@@ -15,5 +15,12 @@
 
     <!-- Common margin value used throughout the app -->
     <dimen name="activity_margin">16dp</dimen>
+
+    <!-- Common image width value used throughout the app -->
+    <dimen name="image_width">150dp</dimen>
+
+    <!-- Common image height value used throughout the app -->
+    <dimen name="image_height">150dp</dimen>
+
 </resources>
 
