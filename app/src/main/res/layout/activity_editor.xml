@@ -1,6 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin"
+    tools:context=".DetailsActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <!-- Overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/category_overview"
+            style="@style/CategoryStyle"/>
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp"
+            android:orientation="vertical">
+
+            <!-- Name field -->
+            <EditText
+                android:id="@+id/item_name"
+                android:hint="@string/hint_item_name"
+                android:inputType="textCapWords"
+                style="@style/EditorFieldStyle"/>
+
+            <!-- Description field -->
+            <EditText
+                android:id="@+id/item_desc"
+                android:hint="@string/hint_item_desc"
+                android:inputType="textCapWords"
+                style="@style/EditorFieldStyle"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Quantity category -->
+    <LinearLayout
+        android:id="@+id/container_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/category_quantity"
+            style="@style/CategoryStyle" />
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp"
+            android:orientation="vertical">
+            <!-- Description field -->
+            <EditText
+                android:id="@+id/item_quantity"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/hint_item_quantity"
+                android:inputType="number"
+                android:paddingLeft="4dp"
+                android:gravity="center_vertical"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Price category -->
+    <LinearLayout
+        android:id="@+id/container_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/category_price"
+            style="@style/CategoryStyle" />
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp"
+            android:orientation="vertical">
+            <!-- Description field -->
+            <EditText
+                android:id="@+id/item_price"
+                style="@style/EditorFieldStyle"
+                android:hint="@string/hint_item_price"
+                android:inputType="number"
+                android:paddingLeft="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/action_sale"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>
