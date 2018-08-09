@@ -128,10 +128,10 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         // Show a toast message depending on whether or not the delete was successful
         if(noOfRowsDeleted < 1){
             // If the noOfRowsDeleted is less than 1, then there was an error with delete.
-            Toast.makeText(this, getString(R.string.editor_delete_item_failed), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.editor_delete_allitems_failed), Toast.LENGTH_SHORT).show();
         }else{
             // Otherwise, the delete was successful and we can display a toast.
-            Toast.makeText(this, getString(R.string.editor_delete_item_successful), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.editor_delete_allitems_successful), Toast.LENGTH_SHORT).show();
         }
         Log.d(TAG, "deleteAllItems: ended");
     }

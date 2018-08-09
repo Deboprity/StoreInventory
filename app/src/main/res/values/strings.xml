@@ -11,7 +11,7 @@
     <string name="action_delete_entry">Delete</string>
 
     <!-- Label for overflow menu option that saves the inventory data in the app [CHAR LIMIT=20] -->
-    <string name="action_save">Delete</string>
+    <string name="action_save">Save</string>
 
     <!-- Title text for the empty view, which describes the empty inventory image [CHAR LIMIT=50] -->
     <string name="empty_view_title_text">The shop is empty...</string>
@@ -61,10 +61,37 @@
     <!-- Dialog button text for the option to cancel deletion of the current pet [CHAR LIMIT=20] -->
     <string name="cancel">Cancel</string>
 
+    <!-- Toast message in editor when new item has been successfully inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_item_successful">Item saved</string>
+
+    <!-- Toast message in editor when new item has failed to be inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_item_failed">Error with saving item</string>
+
+    <!-- Toast message in editor when new item has been successfully updated [CHAR LIMIT=NONE] -->
+    <string name="editor_update_item_successful">Item updated</string>
+
+    <!-- Toast message in editor when new item has failed to be updated [CHAR LIMIT=NONE] -->
+    <string name="editor_update_item_failed">Error with updating item</string>
+
     <!-- Toast message in editor when item has been successfully deleted [CHAR LIMIT=NONE] -->
     <string name="editor_delete_item_successful">Item deleted</string>
 
     <!-- Toast message in editor when item has failed to be deleted [CHAR LIMIT=NONE] -->
     <string name="editor_delete_item_failed">Error with deleting item</string>
+
+    <!-- Toast message in editor when item has been successfully deleted [CHAR LIMIT=NONE] -->
+    <string name="editor_delete_allitems_successful">All the Items deleted</string>
+
+    <!-- Toast message in editor when item has failed to be deleted [CHAR LIMIT=NONE] -->
+    <string name="editor_delete_allitems_failed">Error with deleting all the items</string>
+
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+
+    <!-- Dialog button text for the option to discard a user's changes [CHAR LIMIT=20] -->
+    <string name="discard">Discard</string>
+
+    <!-- Dialog button text for the option to keep editing the current item [CHAR LIMIT=20] -->
+    <string name="keep_editing">Keep Editing</string>
 
 </resources>

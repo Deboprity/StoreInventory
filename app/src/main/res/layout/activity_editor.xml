@@ -29,14 +29,14 @@
 
             <!-- Name field -->
             <EditText
-                android:id="@+id/item_name"
+                android:id="@+id/edit_item_name"
                 android:hint="@string/hint_item_name"
                 android:inputType="textCapWords"
                 style="@style/EditorFieldStyle"/>
 
             <!-- Description field -->
             <EditText
-                android:id="@+id/item_desc"
+                android:id="@+id/edit_item_desc"
                 android:hint="@string/hint_item_desc"
                 android:inputType="textCapWords"
                 style="@style/EditorFieldStyle"/>
@@ -63,7 +63,7 @@
             android:orientation="vertical">
             <!-- Description field -->
             <EditText
-                android:id="@+id/item_quantity"
+                android:id="@+id/edit_item_quantity"
                 style="@style/EditorFieldStyle"
                 android:hint="@string/hint_item_quantity"
                 android:inputType="number"
@@ -92,7 +92,7 @@
             android:orientation="vertical">
             <!-- Description field -->
             <EditText
-                android:id="@+id/item_price"
+                android:id="@+id/edit_item_price"
                 style="@style/EditorFieldStyle"
                 android:hint="@string/hint_item_price"
                 android:inputType="number"

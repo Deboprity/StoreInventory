@@ -34,7 +34,7 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
 
     private Uri mCurrentItemUri;
 
-    private static final int ITEM_EDITOR_LOADER = 1;
+    private static final int ITEM_DETAILS_LOADER = 1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,7 +54,7 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
 
         if(null != currentItemUri){
             mCurrentItemUri = currentItemUri;
-            getLoaderManager().initLoader(ITEM_EDITOR_LOADER, null, this);
+            getLoaderManager().initLoader(ITEM_DETAILS_LOADER, null, this);
         }
 
         Log.d(TAG, "onCreate: ended");
