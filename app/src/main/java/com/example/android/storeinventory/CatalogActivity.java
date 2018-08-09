@@ -3,6 +3,7 @@ package com.example.android.storeinventory;
 import android.app.AlertDialog;
 import android.app.LoaderManager;
 import android.content.ContentUris;
+import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.Loader;
@@ -58,7 +59,7 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         itemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(CatalogActivity.this, EditorActivity.class);
+                Intent intent = new Intent(CatalogActivity.this, DetailsActivity.class);
                 Uri currentItemUri = ContentUris.withAppendedId(InventoryEntry.CONTENT_URI, id);
                 Log.d(TAG, "onItemClick: currentItemUri :: "+currentItemUri);
                 intent.setData(currentItemUri);
@@ -137,16 +138,21 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
 
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
-        return null;
+        String[] projection = {
+                InventoryEntry._ID,
+                InventoryEntry.COLUMN_ITEM_NAME,
+                InventoryEntry.COLUMN_ITEM_DESC
+        };
+        return new CursorLoader(this, InventoryEntry.CONTENT_URI, projection, null, null, null);
     }
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
-
+        mCursorAdapter.swapCursor(cursor);
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
-
+        mCursorAdapter.swapCursor(null);
     }
 }
