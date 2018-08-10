@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +32,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
     private TextView mItemDesc;
     private TextView mItemQuantity;
     private TextView mItemPrice;
+    private Button mSaleButton;
 
     private Uri mCurrentItemUri;
 
@@ -54,12 +56,14 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         mItemDesc = (EditText) findViewById(R.id.edit_item_desc);
         mItemQuantity = (EditText) findViewById(R.id.edit_item_quantity);
         mItemPrice = (EditText) findViewById(R.id.edit_item_price);
+        mSaleButton = (Button) findViewById(R.id.item_sale_button);
 
         if(currentItemUri == null){
             setTitle(getString(R.string.editor_activity_title_new_item));
             // Invalidate the options menu, so the "Delete" menu option can be hidden.
             // (It doesn't make sense to delete a pet that hasn't been created yet.)
             invalidateOptionsMenu();
+            mSaleButton.setVisibility(View.GONE);
         }else{
             setTitle(getString(R.string.editor_activity_title_edit_item));
             mCurrentItemUri = currentItemUri;

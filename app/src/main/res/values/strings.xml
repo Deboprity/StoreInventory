@@ -16,13 +16,13 @@
     <!-- Title text for the empty view, which describes the empty inventory image [CHAR LIMIT=50] -->
     <string name="empty_view_title_text">The shop is empty...</string>
 
-    <!-- Subtitle text for the empty view that prompts the user to add a pet [CHAR LIMIT=50] -->
+    <!-- Subtitle text for the empty view that prompts the user to add a item [CHAR LIMIT=50] -->
     <string name="empty_view_subtitle_text">Get started by adding an item</string>
 
-    <!-- Title for the activity to add a new pet [CHAR LIMIT=20] -->
+    <!-- Title for the activity to add a new item [CHAR LIMIT=20] -->
     <string name="editor_activity_title_new_item">Add an Item</string>
 
-    <!-- Title for the activity to add a new pet [CHAR LIMIT=20] -->
+    <!-- Title for the activity to add a new item [CHAR LIMIT=20] -->
     <string name="editor_activity_title_edit_item">Edit Item</string>
 
     <!-- Label for overview category of attributes in the editor [CHAR LIMIT=30] -->
@@ -52,13 +52,16 @@
     <!-- Text hint for price field in the editor [CHAR LIMIT=30] -->
     <string name="unknown_desc">Unknown Description</string>
 
-    <!-- Dialog message to ask the user to confirm deleting the current pet [CHAR LIMIT=NONE] -->
-    <string name="delete_dialog_msg">Delete this pet?</string>
+    <!-- Dialog message to ask the user to confirm deleting all the items [CHAR LIMIT=NONE] -->
+    <string name="deleteall_dialog_msg">Delete all the Items?</string>
 
-    <!-- Dialog button text for the option to confirm deleting the current pet [CHAR LIMIT=20] -->
+    <!-- Dialog message to ask the user to confirm deleting the current item [CHAR LIMIT=NONE] -->
+    <string name="delete_dialog_msg">Delete this Item?</string>
+
+    <!-- Dialog button text for the option to confirm deleting the current item [CHAR LIMIT=20] -->
     <string name="delete">Delete</string>
 
-    <!-- Dialog button text for the option to cancel deletion of the current pet [CHAR LIMIT=20] -->
+    <!-- Dialog button text for the option to cancel deletion of the current item [CHAR LIMIT=20] -->
     <string name="cancel">Cancel</string>
 
     <!-- Toast message in editor when new item has been successfully inserted [CHAR LIMIT=NONE] -->
