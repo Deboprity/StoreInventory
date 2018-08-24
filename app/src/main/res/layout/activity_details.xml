@@ -12,7 +12,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/activity_margin">
 
         <!-- Label -->
         <TextView
@@ -46,7 +47,8 @@
         android:id="@+id/container_quantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/activity_margin">
 
         <!-- Label -->
         <TextView
@@ -74,7 +76,8 @@
         android:id="@+id/container_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/activity_margin">
 
         <!-- Label -->
         <TextView
@@ -95,12 +98,13 @@
                 tools:text="item_price"/>
         </LinearLayout>
     </LinearLayout>
-    
-    <ImageView
-        android:layout_width="@dimen/image_width"
-        android:layout_height="@dimen/image_height"
-        android:layout_marginTop="10dp"
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        tools:src="@tools:sample/avatars"/>
+        android:layout_margin="@dimen/activity_margin"
+        android:text="@string/order_more"
+        android:textAllCaps="false"/>
 
 </LinearLayout>

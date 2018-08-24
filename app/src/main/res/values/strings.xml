@@ -97,4 +97,7 @@
     <!-- Dialog button text for the option to keep editing the current item [CHAR LIMIT=20] -->
     <string name="keep_editing">Keep Editing</string>
 
+    <!-- Dialog button text for the option to order more of the current item [CHAR LIMIT=20] -->
+    <string name="order_more">Order More</string>
+
 </resources>
