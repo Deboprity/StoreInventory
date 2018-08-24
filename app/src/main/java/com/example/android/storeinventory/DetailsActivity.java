@@ -2,10 +2,8 @@ package com.example.android.storeinventory;
 
 import android.app.AlertDialog;
 import android.app.LoaderManager;
-import android.content.ContentUris;
 import android.content.CursorLoader;
 import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
@@ -20,7 +18,6 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.android.storeinventory.data.InventoryContract;
 import com.example.android.storeinventory.data.InventoryContract.InventoryEntry;
 
 public class DetailsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
@@ -31,7 +28,6 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
     private TextView mItemDesc;
     private TextView mItemQuantity;
     private TextView mItemPrice;
-    private String mItemImage;
 
     private Uri mCurrentItemUri;
 

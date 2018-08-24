@@ -157,7 +157,6 @@ public class InventoryProvider extends ContentProvider {
 
         // Check that the name is not null
         String name = contentValues.getAsString(InventoryEntry.COLUMN_ITEM_NAME);
-        String desc = contentValues.getAsString(InventoryEntry.COLUMN_ITEM_DESC);
         Integer quantity = contentValues.getAsInteger(InventoryEntry.COLUMN_ITEM_QUANTITY);
         Integer price = contentValues.getAsInteger(InventoryEntry.COLUMN_ITEM_PRICE);
         if (TextUtils.isEmpty(name)) {

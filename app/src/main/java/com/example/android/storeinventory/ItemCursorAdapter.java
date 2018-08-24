@@ -67,10 +67,10 @@ public class ItemCursorAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, final Context context, Cursor cursor) {
         // Find individual views that we want to modify in the list item layout
-        TextView nameTextView = (TextView) view.findViewById(R.id.item_name);
-        TextView descTextView = (TextView) view.findViewById(R.id.item_desc);
-        TextView quantityTextView = (TextView) view.findViewById(R.id.item_quantity);
-        Button saleButton = (Button)view.findViewById(R.id.sale_button);
+        TextView nameTextView = view.findViewById(R.id.item_name);
+        TextView descTextView = view.findViewById(R.id.item_desc);
+        TextView quantityTextView = view.findViewById(R.id.item_quantity);
+        Button saleButton = view.findViewById(R.id.sale_button);
         // Find the columns of item attributes that we're interested in
         int idColumnIndex = cursor.getColumnIndex(InventoryEntry._ID);
         int nameColumnIndex = cursor.getColumnIndex(InventoryEntry.COLUMN_ITEM_NAME);
@@ -104,7 +104,7 @@ public class ItemCursorAdapter extends CursorAdapter {
                 Log.d(TAG, "onClick: currentItemUri :: "+currentItemUri);
                 if(null != currentItemUri){
                     mCurrentItemUri = currentItemUri;
-                    int quantity = 0;
+                    int quantity;
                     try{
                         quantity = Integer.parseInt(itemQuantity);
                         // If the item quantity is greater than 0, then only Sale button will be visible
@@ -126,7 +126,7 @@ public class ItemCursorAdapter extends CursorAdapter {
     }
 
     /*
-     *GReduces the item quantity by 1 and changes into database
+     *Reduces the item quantity by 1 and changes into database
      */
     private void updateItemQuantity(Context context, ContentValues values){
         Log.d(TAG, "updateItemQuantity: started");

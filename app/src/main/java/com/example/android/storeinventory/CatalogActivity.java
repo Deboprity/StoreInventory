@@ -9,15 +9,14 @@ import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.support.design.widget.FloatingActionButton;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -38,7 +37,7 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         setContentView(R.layout.activity_catalog);
 
         // Setup FAB to open EditorActivity
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,7 +46,7 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
             }
         });
 
-        ListView itemListView = (ListView) findViewById(R.id.list);
+        ListView itemListView = findViewById(R.id.list);
 
         View emptyView = findViewById(R.id.empty_view);
         itemListView.setEmptyView(emptyView);
@@ -55,6 +54,8 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         //Setup the adapter to create list item for each row of item data in the cursor
         mCursorAdapter = new ItemCursorAdapter(this, null);
         itemListView.setAdapter(mCursorAdapter);
+
+
 
         //set on item click listener
         itemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -94,7 +95,7 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
     }
 
     private void showDeleteConfirmationDialog() {
-        // Create an AlertDialog.Builder and set the message, and click listeners
+        // Create an AlertDialog.Builder and set the message, and click listenersq
         // for the postivie and negative buttons on the dialog.
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(R.string.deleteall_dialog_msg);
