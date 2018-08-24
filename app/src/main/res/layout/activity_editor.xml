@@ -103,13 +103,4 @@
         </LinearLayout>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/item_sale_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/action_sale"
-        android:textAllCaps="false"
-        android:layout_margin="@dimen/activity_margin"
-        android:layout_gravity="center_horizontal"/>
-
 </LinearLayout>
