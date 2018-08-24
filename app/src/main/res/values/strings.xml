@@ -109,4 +109,16 @@
     <!-- Not Sufficient Item for sale Text -->
     <string name="not_sufficient_sale_item">Sufficient Item not present for Sale</string>
 
+    <!-- Email Intent Title -->
+    <string name="mail_chooser_title">Send Email</string>
+
+    <!-- Order More Email Recipient -->
+    <string name="order_mail_recipient">emailaddress@emailaddress.com</string>
+
+    <!-- Order More Email Subject -->
+    <string name="order_mail_subject">Need Items to Order</string>
+
+    <!-- Order More Email Body -->
+    <string name="order_mail_body"></string>
+
 </resources>

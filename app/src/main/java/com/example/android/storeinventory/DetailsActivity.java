@@ -15,6 +15,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +31,8 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
     private TextView mItemQuantity;
     private TextView mItemPrice;
 
+    private Button mOrderMoreButton;
+
     private Uri mCurrentItemUri;
 
     private static final int ITEM_DETAILS_LOADER = 1;
@@ -39,7 +43,7 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         Uri currentItemUri = intent.getData();
 
         Log.d(TAG, "onCreate: currentItemUri :: "+currentItemUri);
@@ -49,10 +53,29 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
         mItemQuantity = findViewById(R.id.item_quantity);
         mItemPrice = findViewById(R.id.item_price);
 
+        mOrderMoreButton = findViewById(R.id.order_more);
+
         if(null != currentItemUri){
             mCurrentItemUri = currentItemUri;
             getLoaderManager().initLoader(ITEM_DETAILS_LOADER, null, this);
         }
+
+        mOrderMoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                String recipient = getString(R.string.order_mail_recipient);
+                emailIntent.setData(Uri.parse("mailto:"));
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {recipient});
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.order_mail_subject));
+                emailIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.order_mail_body));
+                if (emailIntent.resolveActivity(getPackageManager()) != null) {
+                    Log.d(TAG, "onClick: start email intent");
+                    startActivity(Intent.createChooser(emailIntent, getString(R.string.mail_chooser_title)));
+                }
+
+            }
+        });
 
         Log.d(TAG, "onCreate: ended");
     }
