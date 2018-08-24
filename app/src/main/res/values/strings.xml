@@ -119,6 +119,10 @@
     <string name="order_mail_subject">Need Items to Order</string>
 
     <!-- Order More Email Body -->
-    <string name="order_mail_body"></string>
+    <string name="order_mail_body"><p>Hello,</p>
+    <p>Please help to place a new order for the following item</p>
+    <p>Item Details</p>
+
+    </string>
 
 </resources>
