@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.support.design.widget.FloatingActionButton;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -69,6 +70,7 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
 
         //initialize the loader
         getLoaderManager().initLoader(ITEM_LOADER, null, this);
+
     }
 
     @Override

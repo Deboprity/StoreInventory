@@ -103,5 +103,10 @@
     <!-- Quantity details label in Catalog Activity -->
     <string name="quantity_label">Quantities available is </string>
 
+    <!-- Sale Button Text -->
+    <string name="sale_button_text">Sale</string>
+
+    <!-- Not Sufficient Item for sale Text -->
+    <string name="not_sufficient_sale_item">Sufficient Item not present for Sale</string>
 
 </resources>
