@@ -3,6 +3,7 @@ package com.example.android.storeinventory;
 import android.content.Context;
 import android.database.Cursor;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ public class ItemCursorAdapter extends CursorAdapter {
 
 
     private static final String TAG = ItemCursorAdapter.class.getSimpleName();
+    private static final String empty_space = " ";
 
     /**
      * Constructs a new {@link ItemCursorAdapter}.
@@ -62,13 +64,17 @@ public class ItemCursorAdapter extends CursorAdapter {
         // Find individual views that we want to modify in the list item layout
         TextView nameTextView = (TextView) view.findViewById(R.id.item_name);
         TextView descTextView = (TextView) view.findViewById(R.id.item_desc);
+        TextView quantityTextView = (TextView) view.findViewById(R.id.item_quantity);
         // Find the columns of item attributes that we're interested in
         int nameColumnIndex = cursor.getColumnIndex(InventoryEntry.COLUMN_ITEM_NAME);
         int descColumnIndex = cursor.getColumnIndex(InventoryEntry.COLUMN_ITEM_DESC);
+        int quantityColumnIndex = cursor.getColumnIndex(InventoryEntry.COLUMN_ITEM_QUANTITY);
         // Read the item attributes from the Cursor for the current item
         String itemName = cursor.getString(nameColumnIndex);
         String itemDesc = cursor.getString(descColumnIndex);
-
+        String itemQuantity = cursor.getString(quantityColumnIndex);
+        //Adding the quantity label before the quantity
+        itemQuantity = context.getString(R.string.quantity_label) + empty_space + itemQuantity;
         // If the item description is empty string or null, then use some default text
         // that says "Unknown description", so the TextView isn't blank.
         if (TextUtils.isEmpty(itemDesc)) {
@@ -77,5 +83,6 @@ public class ItemCursorAdapter extends CursorAdapter {
         // Update the TextViews with the attributes for the current item
         nameTextView.setText(itemName);
         descTextView.setText(itemDesc);
+        quantityTextView.setText(itemQuantity);
     }
 }

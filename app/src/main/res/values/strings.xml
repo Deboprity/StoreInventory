@@ -100,4 +100,8 @@
     <!-- Dialog button text for the option to order more of the current item [CHAR LIMIT=20] -->
     <string name="order_more">Order More</string>
 
+    <!-- Quantity details label in Catalog Activity -->
+    <string name="quantity_label">Quantities available is </string>
+
+
 </resources>
