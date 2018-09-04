@@ -99,7 +99,6 @@ public class ItemCursorAdapter extends CursorAdapter {
         saleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "Sale Button is clicked for " + id, Toast.LENGTH_SHORT).show();
                 Uri currentItemUri = ContentUris.withAppendedId(InventoryEntry.CONTENT_URI, Long.parseLong(id));
                 Log.d(TAG, "onClick: currentItemUri :: "+currentItemUri);
                 if(null != currentItemUri){
@@ -117,7 +116,7 @@ public class ItemCursorAdapter extends CursorAdapter {
                             Toast.makeText(context, context.getText(R.string.not_sufficient_sale_item), Toast.LENGTH_SHORT).show();
                         }
                     }catch (NumberFormatException e){
-                        Toast.makeText(context, "NumberFormatException", Toast.LENGTH_SHORT).show();
+                        Log.e(TAG, "onClick: NumberFormatException ::" + e);
                     }
 
                 }

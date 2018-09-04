@@ -26,7 +26,8 @@
             android:layout_width="0dp"
             android:layout_weight="2"
             android:paddingLeft="4dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical">
 
             <!-- Name field -->
             <EditText
@@ -62,7 +63,8 @@
             android:layout_width="0dp"
             android:layout_weight="2"
             android:paddingLeft="4dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical">
             <!-- Description field -->
             <EditText
                 android:id="@+id/edit_item_quantity"
@@ -92,7 +94,8 @@
             android:layout_width="0dp"
             android:layout_weight="2"
             android:paddingLeft="4dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical">
             <!-- Description field -->
             <EditText
                 android:id="@+id/edit_item_price"

@@ -108,13 +108,6 @@ public final class InventoryContract {
          */
         public final static String COLUMN_ITEM_PRICE = "price";
 
-        /**
-         * Image of the item.
-         *
-         * Type: IMAGE
-         */
-        public final static String COLUMN_ITEM_IMAGE = "image";
-
     }
 
 

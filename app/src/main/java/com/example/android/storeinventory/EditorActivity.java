@@ -18,7 +18,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -290,7 +289,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         }else{
             values.put(InventoryEntry.COLUMN_ITEM_QUANTITY, 0);
         }
-        String priceString = mItemQuantity.getText().toString().trim();
+        String priceString = mItemPrice.getText().toString().trim();
         if(!TextUtils.isEmpty(priceString)){
             price = Integer.parseInt(priceString);
             values.put(InventoryEntry.COLUMN_ITEM_PRICE, price);
@@ -344,7 +343,6 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
                 InventoryEntry.COLUMN_ITEM_DESC,
                 InventoryEntry.COLUMN_ITEM_QUANTITY,
                 InventoryEntry.COLUMN_ITEM_PRICE };
-        Log.d(TAG, "onCreateLoader: projection :: "+projection.length);
         Log.d(TAG, "onCreateLoader: mCurrentItemUri :: "+mCurrentItemUri);
         // This loader will execute the ContentProvider's query method on a background thread
         return new CursorLoader(this,   // Parent activity context

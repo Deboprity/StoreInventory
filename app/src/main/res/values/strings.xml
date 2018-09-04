@@ -119,10 +119,28 @@
     <string name="order_mail_subject">Need Items to Order</string>
 
     <!-- Order More Email Body -->
-    <string name="order_mail_body"><p>Hello,</p>
-    <p>Please help to place a new order for the following item</p>
-    <p>Item Details</p>
-
+    <string name="order_mail_body">Hello,
+        \n \n
+        Please help to place a new order for the following item
+        \n \n
+        Item Details
+        \n
     </string>
+
+    <!-- DB Details-->
+    <string name="db_name">inventory.db</string>
+    <string name="table_name">items</string>
+    <string name="content_authority">com.example.android.storeinventory</string>
+    <string name="slash">/</string>
+    <string name="column_item_name">name</string>
+    <string name="column_item_desc">desc</string>
+    <string name="column_item_quantity">quantity</string>
+    <string name="column_item_price">price</string>
+
+
+    <!-- Toast Messages for validations -->
+    <string name="mandatory_name_toast_message">Item Name is required</string>
+    <string name="invalid_quantity_toast_message">Enter correct quantity</string>
+    <string name="invalid_price_toast_message">Enter correct price</string>
 
 </resources>

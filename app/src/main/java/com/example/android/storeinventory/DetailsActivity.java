@@ -60,15 +60,20 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
             getLoaderManager().initLoader(ITEM_DETAILS_LOADER, null, this);
         }
 
+
+
+
         mOrderMoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String emailBody = "Item Name - " + mItemName.getText().toString() + "\n" + "Item Description - " + mItemDesc.getText().toString() + "\n";
+                Log.d(TAG, "emailBody : " + emailBody);
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
                 String recipient = getString(R.string.order_mail_recipient);
                 emailIntent.setData(Uri.parse("mailto:"));
                 emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {recipient});
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.order_mail_subject));
-                emailIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.order_mail_body));
+                emailIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.order_mail_body) + emailBody);
                 if (emailIntent.resolveActivity(getPackageManager()) != null) {
                     Log.d(TAG, "onClick: start email intent");
                     startActivity(Intent.createChooser(emailIntent, getString(R.string.mail_chooser_title)));

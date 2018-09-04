@@ -1,8 +1,10 @@
 package com.example.android.storeinventory;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.LoaderManager;
 import android.content.ContentUris;
+import android.content.Context;
 import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -30,11 +32,15 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
 
     private static final int ITEM_LOADER = 0;
 
+    private static Activity instance;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, "onCreate: started");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalog);
+
+        instance = this;
 
         // Setup FAB to open EditorActivity
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -54,8 +60,6 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         //Setup the adapter to create list item for each row of item data in the cursor
         mCursorAdapter = new ItemCursorAdapter(this, null);
         itemListView.setAdapter(mCursorAdapter);
-
-
 
         //set on item click listener
         itemListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -158,5 +162,9 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         mCursorAdapter.swapCursor(null);
+    }
+
+    public static Context getContext() {
+        return instance.getApplicationContext();
     }
 }
